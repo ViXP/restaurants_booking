@@ -1,0 +1,23 @@
+= form_with(model: reservation, local: true, url: :restaurant_dining_table_reservations) do |form|
+  - if reservation.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(reservation.errors.count, "error")
+        prohibited this reservation from being saved:
+      %ul
+        - reservation.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :reserve_date
+    = form.date_select :reserve_date, id: :reservation_date
+  .field
+    = form.label :reserve_start
+    = time_selector(form, :reserve_start)
+  .field
+    = form.label :reserve_end
+    = time_selector(form, :reserve_end)
+  .field
+    = form.label :reserver_name
+    = form.text_field :reserver_name, id: :reservation_reserver_name
+  .actions
+    = form.submit

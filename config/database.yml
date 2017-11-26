@@ -23,7 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: restaurants_booking_development
+  database: booking_development  
+  host: localhost
+  port: 5432
+  username: <%= ENV.fetch('USER') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: restaurants_booking_test
+  database: booking_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: restaurants_booking_production
+  database: booking_production
   username: restaurants_booking
   password: <%= ENV['RESTAURANTS_BOOKING_DATABASE_PASSWORD'] %>

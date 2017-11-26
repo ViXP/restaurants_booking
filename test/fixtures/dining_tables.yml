@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  quantity_of_persons: 1
+  restaurant: one
+
+two:
+  number: 1
+  quantity_of_persons: 1
+  restaurant: two

@@ -30,4 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  application_helper:
+    pretty_time:
+      of_next_day: of the next day
+    time_selector:
+      of_n_d: of n.d.
+      
+  activerecord:
+    errors:
+      messages:
+        out_of_schedule: Sorry, this restaurant is not working on selected time
+        already_reserved: Sorry, this time was already reserved
+        reserv_time_error: The minimum reservation time is 1 hour!
+        date_pass: is already passed
+        incorrect_time: The closing time should be later than opening time!
+        schedules_intersect: The schedule should not intersect with a previous day!

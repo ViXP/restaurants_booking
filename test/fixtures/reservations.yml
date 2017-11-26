@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reserve_date: 2017-11-26
+  reserve_start: 1
+  reserve_end: 1
+  reserver_name: MyString
+  dining_table: one
+
+two:
+  reserve_date: 2017-11-26
+  reserve_start: 1
+  reserve_end: 1
+  reserver_name: MyString
+  dining_table: two

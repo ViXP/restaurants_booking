@@ -1,0 +1,22 @@
+%p#notice= notice
+%section#restaurant_info
+  %h2= @restaurant.title
+  #restaurant_logo
+    = image_tag @restaurant.logo, size: 200
+  %article#restaurant_description
+    %strong Description:
+    = @restaurant.description
+    %br/
+    %strong Website:
+    = @restaurant.website
+%section#schedule
+  %strong Work schedule:
+  = render partial: 'day_schedules/day_schedule', collection: @restaurant.day_schedules
+%section#tables
+  %strong Tables:
+  = render partial: 'dining_tables/dining_table', collection: @restaurant.dining_tables
+= link_to 'New table', new_restaurant_dining_table_path(restaurant_id: @restaurant.id)
+|
+= link_to 'Edit', edit_restaurant_path(@restaurant)
+|
+= link_to 'Back', restaurants_path

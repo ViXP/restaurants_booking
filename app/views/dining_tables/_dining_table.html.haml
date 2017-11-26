@@ -1,0 +1,20 @@
+%article.single_table
+  %strong Table number:
+  = dining_table.number
+  %br/
+  = link_to 'Edit', edit_restaurant_dining_table_path(id: dining_table.id, |
+    restaurant_id: dining_table.restaurant_id)                             |
+  |
+  = link_to 'Delete', restaurant_dining_table_path(id: dining_table.id, |
+    restaurant_id: dining_table.restaurant_id), method: :delete,  |
+    data: { confirm: 'Are you sure?' }
+  %br/
+  %strong Number of persons:
+  = dining_table.quantity_of_persons
+  %br/
+  %strong Actual reservations:
+  %br/
+  = link_to 'New reservation', new_restaurant_dining_table_reservation_path(      |
+      restaurant_id: dining_table.restaurant_id, dining_table_id: dining_table.id |
+    )                                                                             |
+  = render partial: 'reservations/reservation', collection: dining_table.reservations.actual

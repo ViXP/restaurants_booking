@@ -1,0 +1,7 @@
+%article.day_schedule
+  %span= day_schedule.day_of_week_word
+  %span
+    = pretty_time(day_schedule.open_time)
+    = ' - '
+    = pretty_time(day_schedule.close_time)
+  = link_to 'Edit', edit_restaurant_day_schedule_path(restaurant_id: day_schedule.restaurant_id, id: day_schedule.id)

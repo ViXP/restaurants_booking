@@ -1,0 +1,9 @@
+%article.reservation
+  %strong Date:
+  = reservation.reserve_date
+  %strong Reservation time:
+  = pretty_time(reservation.reserve_start)
+  = ' - '
+  = pretty_time(reservation.reserve_end)
+  %strong Reserver:
+  = reservation.reserver_name
